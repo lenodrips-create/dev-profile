@@ -39,15 +39,14 @@
             particles.push({
                 x: x,
                 y: y,
-                vx: vx * 0.12 + (Math.random() - 0.5) * 1.4,
-                vy: vy * 0.12 + (Math.random() - 0.5) * 1.4,
+                vx: vx * 0.12 + (Math.random() - 0.5) * 1.3,
+                vy: vy * 0.12 + (Math.random() - 0.5) * 1.3,
                 life: 1,
-                decay: 0.02 + Math.random() * 0.025,
-                radius: 16 + Math.random() * 26 + speed * 0.6,
-                hue: hue + (Math.random() - 0.5) * 40
+                decay: 0.022 + Math.random() * 0.025,
+                radius: 9 + Math.random() * 14 + speed * 0.4,
+                tone: 44 + Math.random() * 18
             });
         }
-        hue = (hue + 2.6) % 360;
         if (particles.length > 400) particles.splice(0, particles.length - 400);
     }
 
@@ -66,8 +65,8 @@
         ctx.fillStyle = 'rgba(0,0,0,0.14)';
         ctx.fillRect(0, 0, w, h);
 
-        // additive glow for the fluid colors
-        ctx.globalCompositeOperation = 'lighter';
+        // soft neutral smoke that reads on the light background
+        ctx.globalCompositeOperation = 'source-over';
         for (var i = particles.length - 1; i >= 0; i--) {
             var p = particles[i];
             p.x += p.vx;
@@ -80,16 +79,15 @@
                 continue;
             }
             var r = p.radius * (0.5 + p.life * 0.5);
-            var alpha = p.life * 0.18;
+            var alpha = p.life * 0.16;
             var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
-            g.addColorStop(0, 'hsla(' + p.hue + ', 90%, 60%, ' + alpha + ')');
-            g.addColorStop(1, 'hsla(' + p.hue + ', 90%, 60%, 0)');
+            g.addColorStop(0, 'hsla(34, 13%, ' + p.tone + '%, ' + alpha + ')');
+            g.addColorStop(1, 'hsla(34, 13%, ' + p.tone + '%, 0)');
             ctx.fillStyle = g;
             ctx.beginPath();
             ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
             ctx.fill();
         }
-        ctx.globalCompositeOperation = 'source-over';
         requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
