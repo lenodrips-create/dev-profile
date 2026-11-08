@@ -223,6 +223,11 @@ section {
     padding: 90px 24px;
 }
 
+/* tighten the gap between the hero and the first section */
+#about {
+    padding-top: 30px;
+}
+
 .section-title {
     margin: 0 0 28px;
     font-size: 32px;
