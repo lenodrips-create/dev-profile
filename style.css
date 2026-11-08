@@ -292,6 +292,29 @@ section {
     font-size: 15px;
 }
 
+.contact-email {
+    margin: 18px 0 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.contact-email a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+    color: var(--accent);
+}
+
+.price {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
 .tag {
     display: inline-block;
     margin: 0 6px 6px 0;
