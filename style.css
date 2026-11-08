@@ -14,16 +14,7 @@
     box-sizing: border-box;
 }
 
-/* ---------- FLUID CURSOR ---------- */
-.fluid-cursor {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9998;
-}
-
+/* ---------- CUSTOM CURSOR ---------- */
 .cursor-dot,
 .cursor-ring {
     position: fixed;
@@ -50,7 +41,7 @@
     height: 34px;
     margin-left: -17px;
     margin-top: -17px;
-    border: 1.5px solid rgba(140, 129, 115, 0.8);
+    border: 1.5px solid rgba(43, 41, 38, 0.6);
     transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -59,8 +50,8 @@
     height: 54px;
     margin-left: -27px;
     margin-top: -27px;
-    border-color: var(--accent);
-    background: rgba(140, 129, 115, 0.12);
+    border-color: rgba(43, 41, 38, 0.9);
+    background: rgba(43, 41, 38, 0.06);
 }
 
 /* hide the native cursor only when the custom one is active */
