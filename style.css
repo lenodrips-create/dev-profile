@@ -308,6 +308,20 @@ section {
     color: var(--accent);
 }
 
+.card-link {
+    display: block;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.card-link:hover {
+    opacity: 0.7;
+}
+
 .price {
     margin: 0 0 14px;
     font-size: 20px;
