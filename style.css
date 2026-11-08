@@ -14,6 +14,68 @@
     box-sizing: border-box;
 }
 
+/* ---------- FLUID CURSOR ---------- */
+.fluid-cursor {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    margin-left: calc(-1 * var(--s, 0px));
+    margin-top: calc(-1 * var(--s, 0px));
+    transition: opacity 0.2s ease;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    background: var(--text);
+    mix-blend-mode: difference;
+    background: #fff;
+}
+
+.cursor-ring {
+    width: 34px;
+    height: 34px;
+    margin-left: -17px;
+    margin-top: -17px;
+    border: 1.5px solid rgba(140, 129, 115, 0.8);
+    transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.cursor-ring--hover {
+    width: 54px;
+    height: 54px;
+    margin-left: -27px;
+    margin-top: -27px;
+    border-color: var(--accent);
+    background: rgba(140, 129, 115, 0.12);
+}
+
+/* hide the native cursor only when the custom one is active */
+.custom-cursor,
+.custom-cursor a,
+.custom-cursor button,
+.custom-cursor .menu-btn,
+.custom-cursor .card,
+.custom-cursor input,
+.custom-cursor textarea {
+    cursor: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
