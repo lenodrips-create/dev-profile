@@ -29,12 +29,13 @@
     window.addEventListener('resize', resize);
 
     var particles = [];
-    // muted, dark palette: deep green, deep blue, olive, taupe/beige
+    // moody "dark academia" palette from the mood board
     var palette = [
-        '47, 74, 60',
-        '42, 59, 87',
-        '61, 82, 51',
-        '120, 103, 79'
+        '57, 64, 51',   // #394033 dark green
+        '64, 36, 33',   // #402421 deep maroon
+        '89, 85, 77',   // #59554d warm grey
+        '89, 84, 67',   // #595443 olive
+        '115, 92, 64'   // #735c40 tan brown
     ];
     var mouse = { x: w / 2, y: h / 2, px: w / 2, py: h / 2, active: false };
 
