@@ -29,7 +29,13 @@
     window.addEventListener('resize', resize);
 
     var particles = [];
-    var hue = Math.random() * 360;
+    // muted, dark palette: deep green, deep blue, olive, taupe/beige
+    var palette = [
+        '47, 74, 60',
+        '42, 59, 87',
+        '61, 82, 51',
+        '120, 103, 79'
+    ];
     var mouse = { x: w / 2, y: h / 2, px: w / 2, py: h / 2, active: false };
 
     function spawn(x, y, vx, vy) {
@@ -44,7 +50,7 @@
                 life: 1,
                 decay: 0.022 + Math.random() * 0.025,
                 radius: 9 + Math.random() * 14 + speed * 0.4,
-                tone: 44 + Math.random() * 18
+                color: palette[(Math.random() * palette.length) | 0]
             });
         }
         if (particles.length > 400) particles.splice(0, particles.length - 400);
@@ -79,10 +85,10 @@
                 continue;
             }
             var r = p.radius * (0.5 + p.life * 0.5);
-            var alpha = p.life * 0.16;
+            var alpha = p.life * 0.2;
             var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
-            g.addColorStop(0, 'hsla(34, 13%, ' + p.tone + '%, ' + alpha + ')');
-            g.addColorStop(1, 'hsla(34, 13%, ' + p.tone + '%, 0)');
+            g.addColorStop(0, 'rgba(' + p.color + ',' + alpha + ')');
+            g.addColorStop(1, 'rgba(' + p.color + ',0)');
             ctx.fillStyle = g;
             ctx.beginPath();
             ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
