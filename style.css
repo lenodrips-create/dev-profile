@@ -43,8 +43,6 @@
     margin-left: -4px;
     margin-top: -4px;
     background: var(--text);
-    mix-blend-mode: difference;
-    background: #fff;
 }
 
 .cursor-ring {

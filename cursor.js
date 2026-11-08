@@ -85,9 +85,10 @@
                 continue;
             }
             var r = p.radius * (0.5 + p.life * 0.5);
-            var alpha = p.life * 0.2;
+            var alpha = p.life * 0.26;
             var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
             g.addColorStop(0, 'rgba(' + p.color + ',' + alpha + ')');
+            g.addColorStop(0.5, 'rgba(' + p.color + ',' + alpha + ')');
             g.addColorStop(1, 'rgba(' + p.color + ',0)');
             ctx.fillStyle = g;
             ctx.beginPath();
