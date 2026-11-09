@@ -653,6 +653,50 @@ nav.scrolled {
     cursor: pointer;
 }
 
+/* ---------- AWARDS ---------- */
+.award {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.award-photo {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+}
+
+.award-body {
+    flex: 1;
+    min-width: 260px;
+}
+
+.award-body h4 {
+    margin: 0 0 4px;
+    font-size: 22px;
+}
+
+.award-org {
+    margin: 0 0 14px;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 15px;
+}
+
+.award-body p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
 /* ---------- HOME PHOTO PREVIEW ---------- */
 .photo-preview {
     display: grid;
