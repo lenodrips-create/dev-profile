@@ -602,3 +602,82 @@ nav.scrolled {
 .to-top:hover {
     background: var(--accent);
 }
+
+/* ---------- PHOTOGRAPHY GALLERY ---------- */
+.gallery-hero {
+    padding: 140px 24px 20px;
+    text-align: center;
+}
+
+.gallery-hero .eyebrow {
+    margin-bottom: 6px;
+}
+
+.gallery-hero h1 {
+    margin: 0 0 14px;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.gallery-section {
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+
+.gallery {
+    columns: 3 300px;
+    column-gap: 18px;
+}
+
+.shot {
+    margin: 0 0 18px;
+    break-inside: avoid;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--card);
+    box-shadow: 0 6px 18px rgba(43, 41, 38, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shot:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(43, 41, 38, 0.16);
+}
+
+.shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(27, 27, 29, 0.88);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+    cursor: zoom-out;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: min(1100px, 94vw);
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
