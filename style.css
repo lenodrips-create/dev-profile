@@ -653,6 +653,36 @@ nav.scrolled {
     cursor: pointer;
 }
 
+/* ---------- HOME PHOTO PREVIEW ---------- */
+.photo-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.photo-preview a {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--card);
+    box-shadow: 0 6px 18px rgba(43, 41, 38, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photo-preview a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(43, 41, 38, 0.16);
+}
+
+.photo-preview img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
 /* ---------- LIGHTBOX ---------- */
 .lightbox {
     position: fixed;
