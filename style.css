@@ -270,44 +270,63 @@ nav {
 .screen-content {
     position: absolute;
     inset: 0;
-    padding: 5cqw 5.5cqw;
+    padding: 3.5cqw 5.5cqw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: auto;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .screen-title {
-    margin: 0 0 3.2cqw;
-    font-size: 5.2cqw;
+    margin: 0 0 2cqw;
+    font-size: 4.2cqw;
     font-weight: 800;
     line-height: 1.1;
     color: var(--text);
 }
 
 .screen-content .cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.6cqw;
 }
 
 .screen-content .card {
-    padding: 3cqw;
+    padding: 2.2cqw;
     border-radius: 2.2cqw;
 }
 
+/* long card spanning the full width under the three above, laid out in a row */
+.screen-content .card:last-child {
+    grid-column: 1 / -1;
+    padding: 1.6cqw 3cqw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4cqw;
+}
+
+.screen-content .card:last-child h6,
+.screen-content .card:last-child h4,
+.screen-content .card:last-child p,
+.screen-content .card:last-child .tag,
+.screen-content .card:last-child .card-link {
+    margin: 0;
+}
+
 .screen-content .card h6 {
-    font-size: 1.9cqw;
-    margin: 0 0 1.4cqw;
+    font-size: 1.6cqw;
+    margin: 0 0 1cqw;
 }
 
 .screen-content .card h4 {
-    font-size: 3.1cqw;
+    font-size: 2.7cqw;
     margin: 0 0 1.6cqw;
 }
 
 .screen-content .card p {
-    font-size: 2cqw;
-    margin: 0 0 2.2cqw;
+    font-size: 1.7cqw;
+    line-height: 1.4;
+    margin: 0 0 1.6cqw;
 }
 
 .screen-content .tag {
