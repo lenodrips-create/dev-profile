@@ -273,8 +273,8 @@ nav {
     padding: 5cqw 5.5cqw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 .screen-title {
@@ -286,7 +286,7 @@ nav {
 }
 
 .screen-content .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.6cqw;
 }
 
